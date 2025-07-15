@@ -47,12 +47,16 @@ gdown https://drive.google.com/file/d/1gKPtr7qzL3JM6RDUmR3Ch54qOlqz4TMf/view?usp
 mv disputes-content.jsonl.gz data/
 ```
 - Create random training and testing data sets using the command below
-> python3 code/e1.sample-ner-datasets.py data/disputes-content.jsonl.gz data/annotated-udrp-corpus.jsonl.gz data/
+```bash 
+python3 code/e1.sample-ner-datasets.py data/disputes-content.jsonl.gz data/annotated-udrp-corpus.jsonl.gz data/
+```
 
 The script uses the corpus of proceedings and the annotated subset to generate training, and testing *.spacy files for each provider individually and as a whole. The files are saved under the `data` folder.
 
 - Train the model using the command below. Note that the GPU option is optional and only applies to GPU-powered machines. By default, spaCy trains the model on the CPU.
->spacy train data/ner-config.cfg --paths.train data/train-ALL.spacy --paths.dev data/test-ALL.spacy [--gpu-id 0]
+```bash
+spacy train data/ner-config.cfg --paths.train data/train-ALL.spacy --paths.dev data/test-ALL.spacy [--gpu-id 0]
+```
 
 - Evaluate the model's performance per provider by running the commands below
 
@@ -104,12 +108,3 @@ If you use this artifact, please cite our work as below:
   series    = {NDSS 2026}
 }
 ```
-
-## E2
-1. Create the package for the model
-spacy package resources/model-best/ packages/ --name udrp_extractor_baseline --version 0.0.1
-
-2. Install the package
-pip install packages/en_udrp_extractor_baseline-0.0.1/dist/en_udrp_extractor_baseline-0.0.1.tar.gz
-
-3. Now use it to extract the information from the files
