@@ -1,0 +1,4 @@
+You are provided with a list containing names of businesses or individuals with each entity on a line. 
+Your task is to find for each of those entities, the country they are headquartered in (for businesses) or were born in. 
+Produce your output in JSON format with, the key being the entity name and the value being the country as known in the United Nations chart. 
+In case of uncertainty, return the None value. Make sure to escape your JSON output correctly and try parsing them with the Python's json module before returning your output.

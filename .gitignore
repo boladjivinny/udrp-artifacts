@@ -1,0 +1,13 @@
+.venv/
+packages/*
+results/models-performance/*
+model/*
+data/*.spacy
+# large files
+data/disputes-content.jsonl.gz
+resources/model-best/transformer/model
+
+# folders we want to keep
+!packages/.gitkeep
+!results/models-performance/.gitkeep
+!model/.gitkeep
