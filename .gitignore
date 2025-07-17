@@ -6,6 +6,7 @@ data/*.spacy
 # large files
 data/disputes-content.jsonl.gz
 resources/model-best/transformer/model
+data/Jan2023-Aug2024-parsed-proceedings.jsonl.gz
 
 # folders we want to keep
 !packages/.gitkeep
